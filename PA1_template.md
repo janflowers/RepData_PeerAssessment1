@@ -88,7 +88,8 @@ stepsByInterval <- aggregate(formula = steps~interval, data = df, FUN = mean ,na
 names(stepsByInterval) <- c("interval","steps")
 
 # plot the series
-plot(stepsByInterval$interval, stepsByInterval$steps, type="l", xlab = "Steps by Interval", ylab = "Count of Steps", main = "Average # of Steps across Time Period in 5-minute intervals" )   
+plot(stepsByInterval$interval, stepsByInterval$steps, type="l", xlab = "Steps by Interval", 
+     ylab = "Count of Steps", main = "Average # of Steps across Time Period in 5-minute intervals" )   
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
@@ -202,7 +203,9 @@ require(lattice)
 ```
 
 ```r
-xyplot(aveSteps~interval | factor(weekday), data=stepsByInterval_new, type="l", xlab = "Steps by Interval", ylab = "Count of Steps", main = "Average # of Steps across Time Period in 5-minute intervals", layout=c(1,2))   
+xyplot(aveSteps~interval | factor(weekday), data=stepsByInterval_new, type="l", 
+       xlab = "Steps by Interval", ylab = "Count of Steps", 
+       main = "Average # of Steps across Time Period in 5-minute intervals", layout=c(1,2))   
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png) 

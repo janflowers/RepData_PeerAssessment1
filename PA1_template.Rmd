@@ -61,7 +61,8 @@ stepsByInterval <- aggregate(formula = steps~interval, data = df, FUN = mean ,na
 names(stepsByInterval) <- c("interval","steps")
 
 # plot the series
-plot(stepsByInterval$interval, stepsByInterval$steps, type="l", xlab = "Steps by Interval", ylab = "Count of Steps", main = "Average # of Steps across Time Period in 5-minute intervals" )   
+plot(stepsByInterval$interval, stepsByInterval$steps, type="l", xlab = "Steps by Interval", 
+     ylab = "Count of Steps", main = "Average # of Steps across Time Period in 5-minute intervals" )   
 
 
 ```
@@ -134,6 +135,8 @@ stepsByInterval_new <- ddply(df_new, .(interval, weekday), summarise, aveSteps =
 
 #plot using lattice library
 require(lattice)
-xyplot(aveSteps~interval | factor(weekday), data=stepsByInterval_new, type="l", xlab = "Steps by Interval", ylab = "Count of Steps", main = "Average # of Steps across Time Period in 5-minute intervals", layout=c(1,2))   
+xyplot(aveSteps~interval | factor(weekday), data=stepsByInterval_new, type="l", 
+       xlab = "Steps by Interval", ylab = "Count of Steps", 
+       main = "Average # of Steps across Time Period in 5-minute intervals", layout=c(1,2))   
 
 ```
